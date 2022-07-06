@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from lidar360 import Point, LidarKit
 import matplotlib.pyplot as plt
 import numpy as np
