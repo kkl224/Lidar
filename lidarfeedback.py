@@ -2,14 +2,17 @@
 
 from lidar360 import Point, LidarKit
 import matplotlib.pyplot as plt
-matplotlib.use('GTKAgg')
+import matplotlib
 import numpy as np
 import time
 import math
 
+matplotlib.use('GTKAgg')
+
 time.sleep(1.0)
 #Connect to the device
 lk = LidarKit('/dev/ttyUSB0')
+
 #Rotate for 360 degrees
 lk.start()
 time.sleep(1.0)
