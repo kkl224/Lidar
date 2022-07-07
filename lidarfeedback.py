@@ -7,7 +7,7 @@ import numpy as np
 import time
 import math
 
-matplotlib.use('GTKAgg')
+matplotlib.use('tkagg')
 
 time.sleep(1.0)
 #Connect to the device
@@ -34,17 +34,17 @@ def polar_to_cart(a, d):
 while not lk.points.empty():
     num_points += 1
     i = lk.points.get(0)
-    
+
     #Ignore when distance is grater then 10 meters
     if i.dist > 10.0:
         continue
-        
+
     #Get the Cartisian coordinates of the position of the points
     x, y = polar_to_cart(i.angle, i.dist)
     #Add the new point to the array
     points_x.append(y)
     points_y.append(x)
-    
+
     print("[%d] %.2f deg @ %d ms" % (num_points, i.angle, i.timestamp))
 
 print("Number of points: %d" % num_points)
@@ -55,6 +55,7 @@ fig.set_figwidth(15)
 
 #Plot the lidar at (0, 0)
 plt.plot(0, 0, marker="o", markersize=10, markeredgecolor="red", markerfacecolor="green")
+
 #Plot the data points
 ax.scatter(points_x, points_y)
 
