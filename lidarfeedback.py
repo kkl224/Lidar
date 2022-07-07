@@ -2,6 +2,7 @@
 
 from lidar360 import Point, LidarKit
 import matplotlib.pyplot as plt
+matplotlib.use('GTKAgg')
 import numpy as np
 import time
 import math
