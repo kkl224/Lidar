@@ -7,7 +7,7 @@ import numpy as np
 import time
 import math
 
-matplotlib.use('tkagg')
+#matplotlib.use('tkagg')
 
 time.sleep(1.0)
 #Connect to the device
