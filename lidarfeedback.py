@@ -54,7 +54,8 @@ fig.set_figheight(15)
 fig.set_figwidth(15)
 
 #Plot the lidar at (0, 0)
-plt.plot(0, 0, marker="o", markersize=10, markeredgecolor="red", markerfacecolor="green")
+plt.plot(0, 0, marker="o", markersize=8, markeredgecolor="red", 
+markerfacecolor="green")
 
 #Plot the data points
 ax.scatter(points_x, points_y)
