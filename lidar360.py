@@ -32,7 +32,7 @@ class LidarKit:
         self._baud = 230400
         self.points = Queue()
         self.is_running = False
-        self._thread = Thread(target=self._thread_loop)
+        self._thread = None
         #if not self._ser.isOpen():
         #    ser.open()
 
@@ -108,6 +108,8 @@ class LidarKit:
 
     def start(self):
         self.is_running = True
+        if (self._thread is None) or (not self._thread.is_alive()):
+            self._thread = Thread(target=self._thread_loop)
         self._thread.start()
 
     def stop(self):
