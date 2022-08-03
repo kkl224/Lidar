@@ -14,7 +14,7 @@ dist_maps = []
 
 time.sleep(1.0)
 #Connect to the device
-lk = LidarKit('/dev/ttyUSB0')
+#lk = LidarKit('/dev/ttyUSB0')
 
 #Function to convert Polar to Cartisian
 def polar_to_cart(a, d):
@@ -23,10 +23,12 @@ def polar_to_cart(a, d):
     return (x, y)
 
 #Rotate for 360 degrees
-lk.start()
-time.sleep(1.0)
 
 for j in range(0,10):
+    lk = LidarKit('/dev/ttyUSB0')
+    lk.start()
+    print("Go!")
+    time.sleep(1)
 
     #Creating 2 arrays to hold the x and y position of each poing
     points_angle = []
@@ -54,7 +56,9 @@ for j in range(0,10):
     angle_maps.append(points_angle)
     dist_maps.append(points_dist)
 
-    time.sleep(1)
+    lk.stop()
+    print("Pause!")
+    time.sleep(5)
 
 # stop lidar
 lk.stop()
